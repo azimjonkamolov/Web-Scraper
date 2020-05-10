@@ -1,3 +1,9 @@
+<?php
+
+  include "finder.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +14,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Landing Page - Start Bootstrap Theme</title>
+  <title>Link Finder by AK</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,7 +34,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Find source from your link =)</a>
+      <a class="navbar-brand" href="index.php"><img src="https://github.com/mynameisone/Ecom/raw/master/images/Phoenix.png?raw=true" style="height: 40px; weight: 30px;"> </a>
       <!-- <a class="btn btn-primary" href="#">Sign In</a> -->
     </div>
   </nav>
@@ -42,10 +48,10 @@
           <h1 class="mb-5">Enter url (ex: https://bbc.com) and get the sources according to your wish!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form action="index.php#results" method="post">
             <div class="form-row">
               <div class="col-12 col-md-6 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your url...">
+                <input type="text" name="search" class="form-control form-control-lg" placeholder="Enter your url..." required>
               </div>
               <div class="col-12 col-md-3">
                 <input type="submit" name="imgs" value="Images" class="btn btn-block btn-lg btn-primary">
@@ -61,16 +67,27 @@
   </header>
 
   <!-- Icons Grid -->
-  <section class="features-icons bg-light text-center">
+  <section class="features-icons bg-light text-center" id="results">
     <div class="container">
-
-      <div class="col-12 col-md-12 mb-2 mb-md-0">
-        <h1 style="color: blue">sites</h1>
-      </div>
+      <!-- <div class="col-12 col-md-12 mb-2 mb-md-0">
+        <h1 style="color: blue"></h1>
+      </div> -->
 
       <div class="row">
         <div class="col-12 col-md-12 mb-2 mb-md-0">
-          
+<?php
+        if(isset($_POST['imgs']))
+        {
+          $search = $_POST['search'];
+          echo getImgUrl($search);
+        }
+        elseif(isset($_POST['sites']))
+        {
+          $search = $_POST['search'];
+          echo getSiteUrl($search);
+        }
+        
+?>
         </div>
       </div>
     </div>
@@ -166,37 +183,37 @@
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-              <a href="#">About</a>
+              <a href="https://github.com/mynameisone/Web-Scraping">About</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="#">Contact</a>
+              <a href="https://github.com/mynameisone/Web-Scraping">Github</a>
             </li>
-            <li class="list-inline-item">&sdot;</li>
+            <!-- <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
               <a href="#">Terms of Use</a>
-            </li>
-            <li class="list-inline-item">&sdot;</li>
+            </li> -->
+            <!-- <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
               <a href="#">Privacy Policy</a>
-            </li>
+            </li> -->
           </ul>
-          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2019. All Rights Reserved.</p>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Web Scraper 2020. All Rights Reserved.</p>
         </div>
         <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
           <ul class="list-inline mb-0">
             <li class="list-inline-item mr-3">
-              <a href="#">
+              <a href="https://www.facebook.com/AzimjonKamolovUz">
                 <i class="fab fa-facebook fa-2x fa-fw"></i>
               </a>
             </li>
-            <li class="list-inline-item mr-3">
+            <!-- <li class="list-inline-item mr-3">
               <a href="#">
                 <i class="fab fa-twitter-square fa-2x fa-fw"></i>
               </a>
-            </li>
+            </li> -->
             <li class="list-inline-item">
-              <a href="#">
+              <a href="https://www.instagram.com/azimjonkamolovuz/">
                 <i class="fab fa-instagram fa-2x fa-fw"></i>
               </a>
             </li>
