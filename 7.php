@@ -26,7 +26,7 @@
         return $xmlPageXPath; 
     }
 
-    $packtPage = curlGet('https://daryo.uz/2020/05/10/bollivudning-30-dan-oshgan-boshi-ochiq-aktrisalari-foto/'); 
+    $packtPage = curlGet('https://bbc.com'); 
     $packtPageXpath = returnXPathObject($packtPage); 
 
     $urlimage = $packtPageXpath->query('//img/@src');
@@ -42,14 +42,14 @@
 
     }
 
-    $urllink = $packtPageXpath->query('//a');
+    $urllink = $packtPageXpath->query('//a/@href');
     if ($urllink->length > 0)
     {
 
-        for($i = 0; $i < $urllink->length; $i++)
+        for($t = 0; $t < $urllink->length; $t++)
         {
 
-           $links[] = $packtBook['urllink'][] = $urllink->item($i)->nodeValue ;
+           $sitelinks[] = $packtBook['urllink'][] = $urllink->item($t)->nodeValue ;
             
         }
 
@@ -61,11 +61,20 @@
 
     for($n = 0; $n < $i; $n++)
     {
-        if (1)
+        if ($links[$n][0] == '/' && $links[$n][1] != '/')
         {
-            // $link = $links[$n] = "https://daryo.uz" . $links[$n];
-            $link = $links[$n];
+            $link = $links[$n] = "https://bbc.com" . $links[$n];
             echo "<a href='$link'>" . $link . "</a>";
+        }
+        else if ($links[$n][0] == 'h' && $links[$n][1] == 't')
+        {
+            $link =  $links[$n];
+
+            echo "<a href='$link'>" . $link . "</a>";
+        }
+        else if ($links[$n][0] == '#')
+        {
+            continue;
         }
         else
         {
@@ -84,16 +93,27 @@
     echo "<h1> SITE URLS ARE HERE </h1>";
     echo "<br>";
 
-    for($n = 0; $n < $i; $n++)
+    for($n = 0; $n < $t; $n++)
     {
-        if ($links[$n][0] == '/' && $links[$n][1] != '/')
+
+        if ($sitelinks[$n][0] == '/')
         {
-            $link = $links[$n] = "https://daryo.uz" . $links[$n];
+            $link = $sitelinks[$n] = "https://bbc.com" . $sitelinks[$n];
             echo "<a href='$link'>" . $link . "</a>";
+        }
+        else if ($sitelinks[$n][0] == 'h' && $sitelinks[$n][1] == 't')
+        {
+            $link =  $sitelinks[$n];
+
+            echo "<a href='$link'>" . $link . "</a>";
+        }
+        else if ($sitelinks[$n][0] == '#')
+        {
+            continue;
         }
         else
         {
-            $link =  $links[$n];
+            $link =  $sitelinks[$n];
 
             // $link = substr($link, 2);
 
@@ -103,6 +123,16 @@
 
         }
             echo "<br>";
+
+            // $link =  $sitelinks[$n];
+
+            // $link = substr($link, 2);
+
+            // $link = "https://" . $link;
+
+            // echo "<a href='$link'>" . $link . "</a>";
+
+            // echo "<br>";
     }
 
     // print_r($packtBook);
