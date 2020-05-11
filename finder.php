@@ -138,43 +138,55 @@
     
         echo  "<h1> " . $t . " site urls are found  </h1><br>";
         
+        $val = 0;
 
         for($n = 0; $n < $t; $n++)
         {
-            
-            if ($sitelinks[$n][0] == '/')
-            {
-                $link = $sitelinks[$n] = $url.$sitelinks[$n];
-                echo "<a href='$link'>" . $link . "</a>";
-                // getSiteUrl($link);
-            }
-            else if ($sitelinks[$n][0] == 'h' && $sitelinks[$n][1] == 't')
-            {
-                $link =  $sitelinks[$n];
-    
-                echo "<a href='$link'>" . $link . "</a>";
-
-                // getSiteUrl($link);
-            }
-            else if ($sitelinks[$n][0] == '#')
+            if( strpos($sitelinks[$n], "javascript") !== false || strpos($sitelinks[$n], ".js") !== false)
             {
                 continue;
             }
             else
             {
-                $link =  $sitelinks[$n];
-    
-                // $link = substr($link, 2);
-    
-                // $link = "https://" . $link;
-    
-                echo "<a href='$link'>" . $link . "</a>";
 
-                // getSiteUrl($link);
-    
+                $val = $val + 1;
+
+                if ($sitelinks[$n][0] == '/')
+                {
+                    $link = $sitelinks[$n] = $url.$sitelinks[$n];
+                    echo "<a href='$link'>" . $link . "</a>";
+                    // getSiteUrl($link);
+                }
+                else if ($sitelinks[$n][0] == 'h' && $sitelinks[$n][1] == 't')
+                {
+                    $link =  $sitelinks[$n];
+        
+                    echo "<a href='$link'>" . $link . "</a>";
+
+                    // getSiteUrl($link);
+                }
+                else if ($sitelinks[$n][0] == '#')
+                {
+                    continue;
+                }
+                else
+                {
+                    $link =  $sitelinks[$n];
+        
+                    // $link = substr($link, 2);
+        
+                    // $link = "https://" . $link;
+        
+                    echo "<a href='$link'>" . $link . "</a>";
+
+                    // getSiteUrl($link);
+        
+                }
             }
             echo "<br>";
         }
+        echo "<br><br>";
+        echo  "<h1> " . $val . " found site urls are valuable </h1><br>";
     }
 
     // echo getImgUrl('https://daryo.uz/');
