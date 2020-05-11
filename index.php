@@ -1,3 +1,10 @@
+<!-- 
+
+  Author: Azimjon Kamolov
+
+ -->
+
+
 <?php
 
   include "finder.php";
@@ -14,9 +21,10 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Link Finder by AK</title>
+  <title>Source Finder by AK</title>
 
   <!-- Bootstrap core CSS -->
+  <link rel="icon" href="https://github.com/mynameisone/Ecom/raw/master/images/Phoenix.png?raw=true">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts for this template -->
@@ -34,7 +42,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="index.php"><img src="https://github.com/mynameisone/Ecom/raw/master/images/Phoenix.png?raw=true" style="height: 40px; weight: 30px;"> </a>
+      <a class="navbar-brand" href="index.php"><img src="https://github.com/mynameisone/Ecom/raw/master/images/Phoenix.png?raw=true" style="height: 60px; weight: 50px;"> </a>
       <!-- <a class="btn btn-primary" href="#">Sign In</a> -->
     </div>
   </nav>
@@ -183,7 +191,7 @@
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-              <a href="https://github.com/mynameisone/Web-Scraping">About</a>
+              <a href="https://github.com/mynameisone">About</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
@@ -230,3 +238,5 @@
 </body>
 
 </html>
+
+<!-- All credits to those who made this website's design I changed  the design a little bit and left all their info as the same -->
