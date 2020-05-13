@@ -8,4 +8,4 @@
 
 ## Documentation is coming soon
 
-For further help please contact: `azimjon.6561@gmail.com` 
+For further help please contact: `azimjonkamolovuz@gmail.com` 
