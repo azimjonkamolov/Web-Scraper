@@ -5,6 +5,7 @@
 **This webscraper website is built using PHP and MYSQL RDBMS and SQL language**
 
 ---
+To create this project, I read a book "PHP Web Scraping By Jacob Ward" and used techniques from there.
 
 ## Documentation is coming soon
 
