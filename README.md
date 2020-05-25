@@ -10,5 +10,6 @@
 ## Documentation is coming soon
 
 To create this project, I read a book "PHP Web Scraping By Jacob Ward" and used techniques from there.
+All the inforamtion about website and link will be provided soon...
 
 For further help please contact: `azimjonkamolovuz@gmail.com` 
