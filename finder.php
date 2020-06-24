@@ -27,7 +27,8 @@
     function getImgUrl($url)
     {
         $packtPage = curlGet($url); 
-        $packtPageXpath = returnXPathObject($packtPage); 
+        $packtPageXpath = returnXPathObject($packtPage);
+        $i = 0; 
 
         $urlimage = $packtPageXpath->query('//img/@src');
         if ($urlimage->length > 0)

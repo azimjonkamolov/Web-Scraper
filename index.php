@@ -42,7 +42,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="index.php"><img src="https://github.com/mynameisone/Ecom/raw/master/images/Phoenix.png?raw=true" style="height: 60px; weight: 50px;"> </a>
+      <a class="navbar-brand" href="index.php"><img src="https://github.com/mynameisone/Ecom/raw/master/images/Phoenix.png?raw=true" style="height: 60px; width: 50px;"> </a>
       <!-- <a class="btn btn-primary" href="#">Sign In</a> -->
     </div>
   </nav>
