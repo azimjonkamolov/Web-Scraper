@@ -191,11 +191,11 @@
         <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
           <ul class="list-inline mb-2">
             <li class="list-inline-item">
-              <a href="https://github.com/mynameisone">About</a>
+              <a href="https://github.com/azimjonkamolov">About</a>
             </li>
             <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
-              <a href="https://github.com/mynameisone/Web-Scraping">Github</a>
+              <a href="https://github.com/azimjonkamolov/Web-Scraping">Github</a>
             </li>
             <!-- <li class="list-inline-item">&sdot;</li>
             <li class="list-inline-item">
